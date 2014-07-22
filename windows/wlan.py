@@ -2,7 +2,7 @@ from wlanconninfo import WlanConnInfo, WlanConnError
 
 info = WlanConnInfo()
 
-def isSSID():
+def isSSID(ssid):
     try:
         return info.isConnected(ssid)
     except WlanConnError:

@@ -8,11 +8,14 @@ from tkMessageBox import showerror, showinfo
 from Queue import Queue
 from sys import exit, exc_info
 from traceback import format_exception
+from logo import logo
 
 
 class App(Tkinter.Frame):
     def __init__(self, master=None):
         Tkinter.Frame.__init__(self, master)
+        self.tklogo = Tkinter.PhotoImage(data=logo)
+        master.tk.call("wm", "iconphoto", master._w, self.tklogo)
         master.title("MMU AutoWiFi")
         master.resizable(0, 0)
         self['padx'] = 10
@@ -55,7 +58,12 @@ class App(Tkinter.Frame):
         self.thread.start()
     
     def about(self):
-        showinfo("About", "© 2014 Volvagia356\nA community project for Hackerspace MMU")
+        showinfo("About", "© 2014 Volvagia356\n\
+A community project for Hackerspace MMU\n\
+\n\
+Logo designed by eXodes\n\
+\n\
+http://mmuwifi.volzel.net/")
     
     def save_config(self):
         self.set_status("Saving...")

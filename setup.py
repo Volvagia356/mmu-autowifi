@@ -6,7 +6,10 @@ orig = open("mmu_autowifi.py",'rb').read()
 edited = orig.replace("from linux import", "from windows import")
 open("mmu_autowifi.py",'wb').write(edited)
 
-setup(windows=['gui.py'],
+setup(windows=[{
+		'script': 'gui.py',
+		'icon_resources': [(1, "logo.ico")]
+	}],
     options={"py2exe": {
     'bundle_files': 3,
     'compressed': True}},

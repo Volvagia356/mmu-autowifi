@@ -59,6 +59,7 @@ class App(Tkinter.Frame):
     
     def about(self):
         showinfo("About", "© 2014 Volvagia356\n\
+Version 1.0.0\n\
 A community project for Hackerspace MMU\n\
 \n\
 Logo designed by eXodes\n\
@@ -96,5 +97,8 @@ The application will now close.\n\n"+
 mmu_autowifi.load_config()
 root = Tkinter.Tk()
 app = App(master=root)
+
 app.eventloop()
+showinfo("Notice", "This software may stop working on the 16th of December, 2014 due to a change regarding the security of the WiFi network.\n\
+Please check for updates on the website when this occurs.")
 app.mainloop()
